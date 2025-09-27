@@ -1,13 +1,11 @@
--- 修正链接后的加载指令（需先配置 HTTP 白名单，且注意外部脚本风险）
-local success, err = pcall(function()
-    -- 正确的 GitHub Raw 链接（指向 drhvx.lua 纯代码）
-    local rawUrl = "loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()"
-    local luaCode = game:HttpGet(rawUrl)  -- 请求纯 Lua 代码
-    -- 【关键】先打印代码内容，验证是否为合法 Lua 脚本（避免加载恶意代码）
-    print("加载的 drhvx.lua 代码：\n" .. luaCode)
-    loadstring(luaCode)()  -- 确认安全后再执行
+-- 最终可运行指令：加载修复后的 robloxk.lua
+local loadSuccess, loadErr = pcall(function()
+    -- 正确的 robloxk.lua Raw 链接（需替换为你仓库的实际 Raw 链接，示例如下）
+    local robloxkRawUrl = "https://raw.githubusercontent.com/114514hhvb/robloxn/216456166b8918afcb9fdd3d400c6007bd0485f2/robloxk.lua"
+    local robloxkCode = game:HttpGetAsync(robloxkRawUrl, Enum.HttpContentType.TextPlain)
+    loadstring(robloxkCode)()
 end)
 
-if not success then
-    warn("加载失败原因：" .. err)  -- 打印错误信息，便于排查
+if not loadSuccess then
+    warn("加载 robloxk.lua 失败：" .. loadErr)
 end
