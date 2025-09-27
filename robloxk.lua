@@ -1,11 +1,32 @@
--- 最终可运行指令：加载修复后的 robloxk.lua
-local loadSuccess, loadErr = pcall(function()
-    -- 正确的 robloxk.lua Raw 链接（需替换为你仓库的实际 Raw 链接，示例如下）
-    local robloxkRawUrl = "https://raw.githubusercontent.com/114514hhvb/robloxn/216456166b8918afcb9fdd3d400c6007bd0485f2/robloxk.lua"
-    local robloxkCode = game:HttpGetAsync(robloxkRawUrl, Enum.HttpContentType.TextPlain)
-    loadstring(robloxkCode)()
-end)
+main.lua layout.aly buju.aly xfc1.aly init.lua xfc.aly
 
-if not loadSuccess then
-    warn("加载 robloxk.lua 失败：" .. loadErr)
+require "import"
+import "res/init"
+import "res/lasm"
+import "android.app.*"
+import "android.os.*"
+import "android.widget.*"
+import "android.view.*"
+import "layout"
+import "andlua"
+
+activity.setTheme(R.Theme_Blue)
+activity.setTitle("本地密码")
+activity.setContentView(loadlayout(layout))
+
+隐藏标题栏()
+沉浸状态栏()
+
+function nm.onClick()
+    if e.text=="54188" then
+        MD提示("登录成功.正在跳转",0xFF2196F3,0xFFFFF
+        跳转界面("mm")
+        nm.text="登录成功"
+    else
+        nm.text="登录失败"
+        MD提示("密码错误",0xFF2196F3,0xFFFFFFFF,4,1
+    end
 end
+
+控件圆角(nm,0xFF00FFFF,80)
+控件圆角(e,0xFF00FFFF,80)
