@@ -119,10 +119,3 @@ local function main()
     showAlert("脚本结束", "脚本即将退出，下次见！")
 end
 
--- 启动脚本（仅在本地玩家环境中运行）
-local localPlayer = game:GetService("Players").LocalPlayer
-if localPlayer then
-    main()
-else
-    warn("请在 Roblox 玩家环境中运行（如 Roblox Studio 测试模式）")
-end
